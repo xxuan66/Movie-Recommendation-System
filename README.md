@@ -123,7 +123,7 @@
 1. **克隆仓库**
 
     ```bash
-    git clone https://github.com/your_username/recommender_system.git
+    git clone https://github.com/xxuan66/Movie-Recommendation-System.git
     ```
 
 2. **进入项目目录**
