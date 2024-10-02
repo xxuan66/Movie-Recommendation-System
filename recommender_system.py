@@ -59,10 +59,10 @@ item_similarity = user_movie_matrix.corr(method='pearson', min_periods=50)
 def item_based_recommendations(user_id, num_recommendations=5):
     user_ratings = user_movie_matrix.loc[user_id].dropna()
     similar_items = pd.Series()
-    for movie_id, rating in user_ratings.iteritems():
+    for movie_id, rating in user_ratings.items():
         sims = item_similarity[movie_id].dropna()
         sims = sims.map(lambda x: x * rating)
-        similar_items = similar_items.append(sims)
+        similar_items = pd.concat([similar_items, sims])
     similar_items = similar_items.groupby(similar_items.index).sum()
     similar_items = similar_items.sort_values(ascending=False)
     similar_items = similar_items.drop(user_ratings.index, errors='ignore')
