@@ -129,7 +129,7 @@
 2. **进入项目目录**
 
     ```bash
-    cd recommender_system
+    cd Movie-Recommendation-System
     ```
 
 3. **确保数据集文件在 `data/` 目录下**
